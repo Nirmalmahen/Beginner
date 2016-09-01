@@ -1,3 +1,4 @@
+package Permutation;
 import java.util.*;
 public class Permutation {
 	public static Set<String> repeat(String str)
@@ -17,7 +18,8 @@ public class Permutation {
 	for(int i=0;i<=strNew.length();i++){
 		perm.add(charinsert(strNew,initial,i));
 	}
-}
+}    
+    perm.toString();
 	return perm;
 	}
 	public static String charinsert(String str,char c,int j){
@@ -29,6 +31,13 @@ public class Permutation {
 		Scanner in=new Scanner(System.in);
 		System.out.println("Enter the input: ");
 		String input=in.nextLine();
-		System.out.println("The possible Combinations of"+input+" are:\n"+repeat(input));
+		Set<String> rep=repeat(input);
+		String out="";
+		for (Iterator<String> it = rep.iterator(); it.hasNext(); ) {
+			String f = it.next();
+			out=out+f+" ";
+		}
+		String str[]=out.split(" ");
+		System.out.println(str[0].substring(0,2));
 	}	
 	}
